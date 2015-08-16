@@ -99,6 +99,7 @@ GEM
       omniauth (~> 1.0)
       omniauth-oauth2 (~> 1.0)
     pg (0.18.2)
+    puma (2.13.4)
     rack (1.6.4)
     rack-test (0.6.3)
       rack (>= 1.0)
@@ -179,6 +180,7 @@ DEPENDENCIES
   jquery-rails
   omniauth-salesforce (= 1.0.5)
   pg (= 0.18.2)
+  puma (= 2.13.4)
   rails (= 4.2.0)
   rails_12factor (= 0.0.3)
   salesforce-lead (= 0.0.1)

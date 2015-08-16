@@ -9,7 +9,6 @@ gem 'jquery-rails'
 gem 'turbolinks'
 gem 'jbuilder', '2.0'
 gem 'sdoc', '0.4.0', group: :doc
-gem 'rails_12factor', '0.0.3', group: :production
 
 gem 'pg', '0.18.2'
 gem 'omniauth-salesforce', '1.0.5'
@@ -19,4 +18,9 @@ group :development, :test do
   gem 'byebug'
   gem 'web-console', '2.0'
   gem 'spring'
+end
+
+group :production do
+  gem 'rails_12factor', '0.0.3'
+  gem 'puma', '2.13.4'
 end
