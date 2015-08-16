@@ -7,4 +7,11 @@ class User < ActiveRecord::Base
       user.instance_url = auth["credentials"]["instance_url"]
     end
   end
+
+  def credentials
+    {
+      token: access_token,
+      instance_url: instance_url
+    }.stringify_keys
+  end
 end

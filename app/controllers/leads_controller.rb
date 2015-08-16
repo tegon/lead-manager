@@ -50,6 +50,18 @@ class LeadsController < ApplicationController
     end
   end
 
+  def salesforce
+    @lead = Lead.find(params[:id])
+    salesforce_lead = Salesforce::Lead.new(@lead.attributes)
+    if salesforce_lead.create(current_user.credentials)
+      flash[:success] = 'Lead adicionado ao Salesforce com successo!'
+      redirect_to leads_path
+    else
+      flash[:error] = salesforce_lead.errors.map{ |e| e[:message] }.join(', ')
+      redirect_to leads_path
+    end
+  end
+
   private
   def lead_params
     params.require(:lead).permit(:name, :last_name, :email, :company, :job_title, :phone, :website)

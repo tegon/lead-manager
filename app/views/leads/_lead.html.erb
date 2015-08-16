@@ -2,4 +2,4 @@
 
 <%= link_to 'editar', edit_lead_path(lead) %>
 <%= link_to 'deletar', lead_path(lead), method: :delete, data: { confirm:'Tem certeza que deseja apagar esse Lead?' }, class: 'delete' %>
-<%= link_to 'adicionar ao Salesforce', '' %>
+<%= link_to 'adicionar ao Salesforce', salesforce_lead_path(lead), method: :post %>
