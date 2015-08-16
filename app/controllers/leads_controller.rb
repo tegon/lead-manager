@@ -53,6 +53,7 @@ class LeadsController < ApplicationController
   def salesforce
     @lead = Lead.find(params[:id])
     salesforce_lead = Salesforce::Lead.new(@lead.attributes)
+
     if salesforce_lead.create(current_user.credentials)
       flash[:success] = 'Lead adicionado ao Salesforce com successo!'
       redirect_to leads_path

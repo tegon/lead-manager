@@ -1,4 +1,6 @@
 class User < ActiveRecord::Base
+  validates_presence_of :email, :uid, :access_token, :instance_url
+
   def self.create_with_salesforce(auth)
     create! do |user|
       user.email = auth["extra"]["email"]
