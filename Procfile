@@ -1,1 +1,0 @@
-web: bundle exec puma -S tmp/pids/puma.state
