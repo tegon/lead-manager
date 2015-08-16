@@ -12,7 +12,7 @@ gem 'sdoc', '0.4.0', group: :doc
 
 gem 'pg', '0.18.2'
 gem 'omniauth-salesforce', '1.0.5'
-gem 'salesforce-lead', path: '../salesforce-lead'
+gem 'salesforce-lead', '0.0.1'
 
 group :development, :test do
   gem 'byebug'
