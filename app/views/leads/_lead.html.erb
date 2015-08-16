@@ -1,0 +1,5 @@
+<p><%= link_to lead.name, lead_path(lead) %> </p>
+
+<%= link_to 'editar', edit_lead_path(lead) %>
+<%= link_to 'deletar', lead_path(lead), method: :delete, data: { confirm:'Tem certeza que deseja apagar esse Lead?' }, class: 'delete' %>
+<%= link_to 'adicionar ao Salesforce', '' %>

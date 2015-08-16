@@ -1,14 +1,29 @@
 <!DOCTYPE html>
 <html>
-<head>
-  <title>LeadManager</title>
-  <%= stylesheet_link_tag    'application', media: 'all', 'data-turbolinks-track' => true %>
-  <%= javascript_include_tag 'application', 'data-turbolinks-track' => true %>
-  <%= csrf_meta_tags %>
-</head>
-<body>
+  <head>
+    <title>LeadManager</title>
+    <%= stylesheet_link_tag    'application', media: 'all', 'data-turbolinks-track' => true %>
+    <%= javascript_include_tag 'application', 'data-turbolinks-track' => true %>
+    <%= csrf_meta_tags %>
+  </head>
+  <body>
 
-<%= yield %>
+    <div id="user_nav">
+      <% if current_user %>
+        Olá, <%= current_user.email %>!
+        <%= link_to "Sair", logout_path %>
+      <% end %>
+    </div>
 
-</body>
+    <% unless flash[:error].blank? %>
+      <div class='flash-error'><%= flash[:error].html_safe %></div>
+    <% end %>
+
+    <% unless flash[:success].blank? %>
+      <div class='flash-success'><%= flash[:success].html_safe %></div>
+    <% end %>
+
+  <%= yield %>
+
+  </body>
 </html>

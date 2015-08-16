@@ -1,0 +1,5 @@
+<% unless object.errors.empty? %>
+  <% object.errors.full_messages.each do |error| %>
+    <p class='validation-error'><%= error %></p>
+  <% end %>
+<% end %>

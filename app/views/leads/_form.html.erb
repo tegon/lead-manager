@@ -1,0 +1,24 @@
+<%= render partial: 'shared/validation_errors', locals: { object: @lead } %>
+
+<dt>Nome</dt>
+<dd><%= f.text_field :name %></dd>
+
+<dt>Sobrenome</dt>
+<dd><%= f.text_field :last_name %></dd>
+
+<dt>Email</dt>
+<dd><%= f.email_field :email %></dd>
+
+<dt>Empresa</dt>
+<dd><%= f.text_field :company %></dd>
+
+<dt>Cargo</dt>
+<dd><%= f.text_field :job_title %></dd>
+
+<dt>Telefone</dt>
+<dd><%= f.phone_field :phone %></dd>
+
+<dt>Site</dt>
+<dd><%= f.url_field :website %></dd>
+
+<%= submit_tag 'salvar' %>

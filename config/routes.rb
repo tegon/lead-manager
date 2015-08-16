@@ -1,4 +1,6 @@
 Rails.application.routes.draw do
-  root to: 'leads#index'
-  get 'auth/:provider/callback' => 'sessions#create'
+  root to: 'sessions#new', as: :login
+  get 'auth/salesforce/callback' => 'sessions#create'
+  get '/logout' => 'sessions#destroy', as: :logout
+  resources :leads
 end

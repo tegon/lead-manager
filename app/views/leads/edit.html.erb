@@ -1,0 +1,5 @@
+Editar
+
+<%= form_for @lead, url: lead_path(@lead) do |f| %>
+  <%= render partial: 'form', locals: { f: f } %>
+<% end %>

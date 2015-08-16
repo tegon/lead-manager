@@ -1,3 +1,11 @@
-<div id="user_nav">
-  <%= link_to "Sign in with Salesforce", "/auth/salesforce" %>
-</div>
+<h3>Leads</h3>
+
+<% if @leads.empty? %>
+  <p> Não existem leads cadastradas. </p>
+<% else %>
+  <%= render @leads %>
+<% end %>
+
+<br />
+
+<%= link_to 'Novo', new_lead_path %>
